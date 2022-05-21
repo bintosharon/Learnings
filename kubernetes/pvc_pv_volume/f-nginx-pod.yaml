@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: f-nginx-pod
+spec:
+  containers:
+  - name: f-nginx-container
+    image: nginx
+    env: 
+      - name: SERVER_URL_ENV
+        valueFrom:
+          configMapKeyRef:
+            name: f-config
+            key: SERVER_URL
+    volumeMounts:
+      - mountPath: "etc/test"
+        name: secret
+        readOnly: true
+      - mountPath: "usr/share/nginx/html"
+        name: f-pv
+  volumes:
+  - name: secret
+    secret:
+      secretName: f-secret
+  - name: f-pv
+    persistentVolumeClaim:
+      claimName: f-pvc
+  
