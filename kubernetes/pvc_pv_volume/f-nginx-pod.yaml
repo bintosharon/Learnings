@@ -16,8 +16,13 @@ spec:
       - mountPath: "etc/test"
         name: secret
         readOnly: true
+      - mountPath: "usr/share/nginx/html"
+        name: f-pv
   volumes:
   - name: secret
     secret:
       secretName: f-secret
+  - name: f-pv
+    persistentVolumeClaim:
+      claimName: f-pvc
   
