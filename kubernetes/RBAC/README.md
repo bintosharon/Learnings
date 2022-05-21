@@ -55,3 +55,5 @@ create a pod using
  
 we will get denied if we try to access default namespace, check using:
 ```kubectl --context=dev-ctx get pods -n default```
+
+done
