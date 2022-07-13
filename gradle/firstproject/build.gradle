@@ -4,6 +4,15 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/7.4.2/samples
  */
+ println 'start' //configure phase
 task firstTask{
     println 'Gradle Rocks!!'
+    doFirst{
+        println'do first'   //execution phase
+    }
+    doLast{
+        println'doLast'     //execution phase
+    }
 }
+
+println'end' //configure phase
