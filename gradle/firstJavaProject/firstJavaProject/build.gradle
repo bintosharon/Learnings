@@ -6,12 +6,28 @@
  * User Manual available at https://docs.gradle.org/7.4.2/userguide/building_java_projects.html
  */
 
+//**********************************Google gradle project interface and keep reading it*************************************
+//gradle project properties
+//gradle creates a project object. For each project
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
 
+project.description="First Java Project description"
+project.version=1.0
+project.ext.xyz="abc"
 repositories {
+    println project.name
+    println project.version
+    println project.description
+    println project.path
+    println project.projectDir
+    println project.buildDir
+    println project.xyz
+    println project.property("xyz")
+    
+
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }

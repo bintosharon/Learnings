@@ -23,4 +23,7 @@ println s
 
 emailPattern=/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/
 
-print "test@gmail.com"==~ emailPattern
+println "test@gmail.com"==~ emailPattern  //find operator or pattern operator ==~	
+println "testgmail.com"==~ emailPattern
+
+println emailPattern.getClass()
