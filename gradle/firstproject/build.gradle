@@ -5,10 +5,13 @@
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/7.4.2/samples
  */
  println 'start' //configure phase
-task firstTask{
+task firstTask{  //project.task
+
+    def abc=123
     println 'Gradle Rocks!!'
     doFirst{
-        println'do first'   //execution phase
+        println'do first'
+        println abc   //execution phase
     }
     doLast{
         println'doLast'     //execution phase
@@ -16,3 +19,45 @@ task firstTask{
 }
 
 println'end' //configure phase
+
+task deployToStage{                 //configure phase
+    println "Deployed to stage"
+    doLast(){
+        println "Deployed to stage"  //build phase
+    }
+}
+
+task deployToProd{                 //configure phase
+    doLast(){
+        println "Deployed to Prod"  //build phase
+    }
+}
+deployToProd.dependsOn deployToStage  //inbuilt -> dependsOn
+
+task cleanupFiles{
+    doLast(){
+        println 'Cleaned Up Files'
+    }
+}
+
+deployToProd.finalizedBy cleanupFiles  //inbuilt ->finalized by
+// $ gradle dTP
+
+// > Configure project :
+// start
+// Gradle Rocks!!
+// end
+// Deployed to stage
+
+// > Task :deployToStage
+// Deployed to stage
+
+// > Task :deployToProd
+// Deployed to Prod
+
+// > Task :cleanupFiles
+// Cleaned Up Files
+
+// 
+
+defaultTasks "deployToStage"
