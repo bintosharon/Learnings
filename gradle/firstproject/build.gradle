@@ -21,7 +21,7 @@ task firstTask{  //project.task
 println'end' //configure phase
 
 task deployToStage{                 //configure phase
-    println "Deployed to stage"
+    println "Deployed t                o stage"
     doLast(){
         println "Deployed to stage"  //build phase
     }
