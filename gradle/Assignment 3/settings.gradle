@@ -1,0 +1,3 @@
+
+rootProject.name = 'hellomultimoduleproject'
+include('hellomultimoduleproject','web','data')
