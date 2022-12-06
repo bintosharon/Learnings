@@ -1,0 +1,1 @@
+use bash jenkinsubunt.sh
