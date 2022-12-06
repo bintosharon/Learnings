@@ -1,0 +1,25 @@
+sudo su -
+wget https://raw.githubusercontent.com/duorg/Scripts/master/docker-compose.yml
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose version
+mkdir sonar
+cd sonar
+#create two files Dockerfile, sonar.properties with the below content
+
+Dockerfile
+FROM sonarqube:7.9-community
+COPY sonar.properties /opt/sonarqube/conf/
+
+sonar.properties
+sonar.junit.reportPaths=target/surefire-reports
+sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+
+#Get back to /root folder and run the command 
+docker-compose up -d
+
+#if memory issue, please run
+sysctl -w vm.max_map_count=262144
+
+and rerun
+docker-compose up -d
