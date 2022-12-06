@@ -10,3 +10,8 @@ sudo systemctl status jenkins
 
 
 https://raw.githubusercontent.com/duorg/Scripts/master/jenkinsubuntu.sh
+
+use sudo usermod -a =G docker jenkins
+id jenkins                  
+#now jenkins and docker will be in same group
+
