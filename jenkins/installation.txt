@@ -7,3 +7,6 @@ sudo apt install openjdk-8-jdk
 sudo apt-get install jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
+
+
+https://raw.githubusercontent.com/duorg/Scripts/master/jenkinsubuntu.sh
