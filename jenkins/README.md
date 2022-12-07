@@ -9,6 +9,7 @@ Maven integration
 capitomcat
 deploy to container
 build pipeline
+docker build snd publish 
 
 pre step
 #For a static code analysis, build enviroment as sonar, add maven goal as
