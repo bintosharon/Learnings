@@ -1,0 +1,27 @@
+in the docker host
+        cat /etc/passwd                                            
+# will list the users
+        cat /etc/group                                              
+# will get the group
+      useradd dockeradmin
+      passwd dockeradmin
+
+      id dockeradmin                          
+
+#to check about his group etc
+usermod -aG docker dockeradmin
+ 
+ add additional group
+ 
+        vi /etc/ssh/sshd_config
+
+find the password using / Password and uncomment password based authentication
+
+        service sshd reload
+
+#optional - we can use ssh keys instead also
+          which is ssh-keygen
+
+Go to jenkins and add publish over ssh, we can also use scp if needed
+
+ 
