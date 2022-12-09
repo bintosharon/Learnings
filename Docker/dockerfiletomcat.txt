@@ -10,3 +10,12 @@
     RUN mv apache-tomcat-9.0.70/* /opt/tomcat
     EXPOSE 8080
     CMD ["/opt/tomcat/bin/catalina.sh","run"]
+
+
+----------------------------------------------------------------
+
+Shorter version
+
+FROM tomcat:latest
+CP -R webapps.dist webapps /usr/local/tomcat 
+#last thing is CATALINA_HOME /usr/local/tomcat from official dockerhub documentation for tomcat image
