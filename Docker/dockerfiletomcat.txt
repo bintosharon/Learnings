@@ -17,5 +17,5 @@
 Shorter version
 
 FROM tomcat:latest
-CP -R webapps.dist webapps /usr/local/tomcat 
-#last thing is CATALINA_HOME /usr/local/tomcat from official dockerhub documentation for tomcat image
+CP -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps  
+CATALINA_HOME is /usr/local/tomcat from official dockerhub documentation for tomcat image
