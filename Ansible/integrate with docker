@@ -18,3 +18,14 @@ see the uptime
 
     ansible all -a uptime (-m command optional)
 
+
+
+sudo usermod -aG docker ansadmin
+sudo chmod 777 /var/run/docker.sock
+chmod -R ansadmin:ansadmin docker
+
+*
+*
+*
+
+
