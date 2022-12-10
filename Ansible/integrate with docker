@@ -16,5 +16,5 @@ check the connection by
     ansible all -m ping 
 see the uptime
 
-    ansible all -m command -a uptime (command optional)
+    ansible all -a uptime (-m command optional)
 
