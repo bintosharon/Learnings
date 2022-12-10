@@ -28,4 +28,33 @@ chmod -R ansadmin:ansadmin docker
 *
 *
 
+go to /opt/docker on ansadmin
 
+ansible-playbook -i 
+
+go to /etc/ansible/hosts with sudo
+
+add ansadmin ip there like
+[docker]
+<docker ip>
+
+[ansible]
+<ansible ip>
+
+ssh-copy-id <ip of root ifconfig ansible server>
+ssh-copy-id <localhost>
+
+now create a playbook, regapp.yml
+
+---
+- hosts: ansible  (or ip of ansible)
+  #become: true optional
+  tasks:
+  - name:create docker image
+    (we can use docker command or module)
+    (docker command - docker_image - we need to config system)
+    command: docker build -t regapp:v2 .   (somewhere else , give path via -f instead of .)
+    args:
+     chdir: /opt/docker
+     
+ansible-playbook regapp.yml --check
