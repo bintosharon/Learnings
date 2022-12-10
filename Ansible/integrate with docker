@@ -1,0 +1,20 @@
+first, create docker host, and ansible host from ect, 
+
+have ansadmin user on both, with visudo and /etc/ssh/sshd_config password based authentication on
+
+get docker machine ip addreess using ifconfig (because of ec2 instances connected via private vpc, we can use th private ip address
+and docker host ip address to ansible host machine /etc/ansible/hossts 
+
+have a ssh-keygen on ansible host  - it will be on home directory .ssh
+id_rsa.pub
+ll -la 
+copy that to dockerhost by
+
+    ssh-copy-id <dockerhostip> 
+    
+check the connection by 
+    ansible all -m ping 
+see the uptime
+
+    ansible all -m command -a uptime (command optional)
+
