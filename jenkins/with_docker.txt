@@ -24,4 +24,17 @@ find the password using / Password and uncomment password based authentication
 
 Go to jenkins and add publish over ssh, we can also use scp if needed
 
+
+after war file deployed to docker server, go to /opt/
+
+create a dir named docker
+
+change owner using 
+        chown -R dockeradmin:dockeradmin docker
+        
+-R meand recursively
+
+ls -ld means checking execution permission
+
+
  
