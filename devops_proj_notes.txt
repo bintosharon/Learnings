@@ -1,0 +1,58 @@
+Jenkins Initial admin password
+e670934bdac246428a093e424ea051bb
+
+tar -xvzf <maven zipped file>				# to extract zipped files
+
+
+cd ~							#to go to root home directory
+
+ll -a							#view all files, including hidden
+
+
+							#in bash_profile
+M2_Home
+M2
+JAVA_HOME = find / -name jvm
+
+source .bash_profile					#the changes will apply on restart so instead of that we are loading only the bash profile file
+
+
+clean install						#maven goal
+
+
+Tomcat with Jenkins: 
+
+Plugins: deploy to container
+
+manage jenkins-> add credentials
+
+
+
+Cron JOB:
+* * * * *
+
+
+docker:
+
+yum install docker -y
+service docker status
+service docker start
+
+docker images
+docker ps
+docker ps -a
+docker --help
+
+hub.docker.com #for all images, We can search for flask images too.
+
+docker pull tomcat
+
+#init 6 to restart ec2 instance
+
+docker run -d --name tomcat-container -p 8081:8080 tomcat
+					externally expose:internally run
+docker exec -it <container id or container name> /bin/bash
+
+cp -R * ../webapps/
+
+
