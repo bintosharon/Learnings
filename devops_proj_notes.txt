@@ -56,3 +56,23 @@ docker exec -it <container id or container name> /bin/bash
 cp -R * ../webapps/
 
 
+Dockerfile
+
+FROM: to pull the base image
+RUN: To execute commands
+CMD: To provide defaults of executing container - execute at docker execution
+ENTRYPOINT: To configure a container that will run as executable- cannot be overwritten, like CMD
+WORKDIR: To set the working directory - like cd command
+COPY: copy directory from local machine to docker container
+ADD: copy files and folders from local machine to docker container - we can also use this like wget command
+EXPOSE:  informs docker that container listens on the specified network ports
+ENV:
+
+see dockerfile instuctions 
+
+from run cMD copy workdir entrypoint aDD expose
+
+docker build -t mytomcat .
+
+
+cat /etc/passwd 	# to know what are the users are there
