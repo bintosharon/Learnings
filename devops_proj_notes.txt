@@ -76,3 +76,31 @@ docker build -t mytomcat .
 
 
 cat /etc/passwd 	# to know what are the users are there
+useradd dockeradmin 	#add a admin user
+passwd dockeradmin	# to set a password 31bkst
+id dockeradmin 		# to see what group, 
+cat /etc/group		# to see group
+usermod -aG docker dockeradmin	# to create a group and add that user
+vi /etc/ssh/sshd_config	#for ec2 instances, enabling password
+/Password 		#in Vi editor
+service sshd reload	#reload services
+publish over ssh 	#send artificat thru ssh
+
+sudo su - dockeradmin	#login as dockeradmin
+ssh-keygen
+cd /home/dockeradmin/.ssh
+
+
+
+chown -R dockeradmin:dockeradmin docker
+COPY ./*.war /usr/local/tomcat/webapps
+
+exec: 
+cd /opt/docker;
+docker build -t regapp:v1 .;
+docker run -d --name registerapp -p 8086:8080 regapp:v1
+
+
+
+docker image prune -a
+docker container prune
