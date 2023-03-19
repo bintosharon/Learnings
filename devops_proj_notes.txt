@@ -104,3 +104,87 @@ docker run -d --name registerapp -p 8086:8080 regapp:v1
 
 docker image prune -a
 docker container prune
+
+
+Ansible
+
+useradd ansadmin
+passwd ansadmin
+
+vi /etc/ssh/sshd_config
+password auth yes
+
+service sshd reload
+
+ssh-keygen
+
+yum install ansible
+python --version
+
+vi sudo
+copy all-all Nopasswd:all 	#shift G
+
+
+ansible --version
+
+
+vi /etc/ansible/hosts  #default inventory file
+
+ifconfig of docker host
+ssh-copy-id <private ip>
+ll-la
+
+
+ansible all -m ping
+ansible all -m command -a uptime
+
+sudo chown ansadmin:ansadmin docker
+
+cat /etc/group
+
+usermod -aG docker ansadmin
+id ansadmin
+
+chmod 777 <file>
+
+ansible-playbook localhost
+
+[dockerhost]
+172.88.88
+[ansible]
+876876
+
+vi regapp.yml
+---
+- hosts: ansible
+  tasks:
+  - name: create a docker image
+    command: docker build -t regapp:latest .  #-f for path
+    args:
+      chdir: /opt/docker
+ansible-playbook regapp.yml --check
+
+
+
+
+
+
+
+
+docker hub
+
+docker login
+docker push <image name>
+
+docker images
+
+docker tag <imageid> binto/<imagename>
+docker push binto/imagename
+
+ansible-playbook regapp.yml --limit <ipaddress localhost>
+
+
+chmod 777 /directory which violates
+
+ignore_errors: yes
+if we have this container then stop it, if not, dont fail the play book
