@@ -188,3 +188,84 @@ chmod 777 /directory which violates
 
 ignore_errors: yes
 if we have this container then stop it, if not, dont fail the play book
+
+
+---------------------------------------------------------------------------
+Kubernetes
+
+create a ec2 instance and check version
+
+aws --version
+
+chmod +x kubectl
+mv kubectl /usr/local/bin
+echo $PATH
+
+
+kubectl get nodes
+
+kubectl run webapp --image=httpd
+kubectl get all
+kubectl get po
+
+
+eksctl create cluster --name bintocluster  \
+--region ap-northeast-1 \
+--node-type t2.micro \
+--nodes-min 2 \
+--nodes-max 2 \ 
+--zones <AZ-1>,<AZ-2>
+eksctl delete cluster bintocluster--region ap-northeast-1
+
+
+example:
+eksctl create cluster --name valaxy-cluster \
+   --region ap-south-1 \
+--node-type t2.small \
+
+kubectl create deployment demo-ngnix --image=nginx --replicas=2 --port=80
+
+kubectl get deployment
+
+kubectl get replicaset
+
+kubectl get pod
+kubectl get all
+
+kubectl expose deployment demo-nginx --port=80 --type=LoadBalancer
+
+vi pod.yml
+
+kubernetes api documentation
+
+pod manifest file in kubernetes
+
+apiVersion: v1
+kind: Pod
+metadate:
+  name: demo-pod
+  labels:
+    app: demo-app
+spec:
+  containers: 
+    -name: demo-nginx
+     image: nginx
+     ports:
+       -name: demo-nginx
+        containerPort: 80
+
+service manifest file kubernetes
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: demoservice
+spec:
+  ports:
+  - name: nginx-port
+    port: 80                 #exposing on port 80
+    targetPort: 80           #container 80
+  type: LoadBalancer
+
+kubectl apply -f pod.yml
+
