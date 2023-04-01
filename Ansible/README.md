@@ -16,5 +16,7 @@
 - [Ansible documentation](https://docs.ansible.com/).
 
 
-## 
+`shutdown now -r`
 
+`sudo vi /etc/hostname`
+`sudo vi /etc/hosts`
