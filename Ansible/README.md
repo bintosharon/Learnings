@@ -37,7 +37,8 @@ web2 ansible_host=server4.company.com`
 ansible_connection - ssh/winrm/localhost
 ansible_port - 22/5986
 ansible_user - root/administrator
-ansible_ssh_pass=Password`
+ansible_ssh_pass=Password  #for linux
+ansible_password=password # for windows based machine`
 
 - winrm - windows server
 - ssh- linux server
