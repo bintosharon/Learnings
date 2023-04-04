@@ -131,6 +131,72 @@ for List:
 - line beginning with # is comment
 
 
+## Ansible Playbooks:
+
+### simple ansible playbook
+- run command1 on server1
+- restaring server 1
+
+#### Complex Ansible Playbook
+
+- Deploy 50 VMs on Public Cloud
+
+- Deploy 50 VMs on Private Cloud
+
+- Provision Storage to all VMs
+
+- Setup Network Configuration on Private VMs
+
+- Setup Cluster Configuration
+
+- Configure Web server on 20 Public VMs
+
+- Configure DB server on 20 Private VMs
+
+- Setup Loadbalancing between web server VMs Setup Monitoring components
+
+- Install and Configure backup clients on VMs Update CMDB database with new VM Information
+
+### playbook
+
+- play : set of tasks to be run on hosts
+- task: action to be performed on the host
+  - execute a command
+  
+list of dictionaries
+- name: play1
+  hosts: localhost
+  
+- name: play 2
+
+- ansible-doc -l
+
+- execute ansible playbook: ansible-playbook <playbook name>
+- `ansible-playbook --help`
+
+### ansible command
+
+- one off task: test connectivity between ansible controller and targets
+-  `ansible target1 -m ping`
+- `ansible all -a "/sbin/reboot"`
+- `ansible all -m ping -i inventory.txt
+#### not ideal usage
+
+### ansible play book command
+`vi playbook-pingtest.yaml
+-
+  name: test connectivity to target servers
+  hosts: all
+  tasks:
+    - name: ping test
+      ping:`
+
+- `ansible-playbook playbook-pingtest.yaml -i inventory.txt`
+
+
+
+
+
 
 
 
