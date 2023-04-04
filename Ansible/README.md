@@ -53,6 +53,86 @@ ansible_password=password # for windows based machine`
   `ansible target1 -m ping -i inventory.txt`
 
 
+## YAML
+
+### XML
+
+'<Servers>
+<Server>
+<name>Server1</name> 
+<owner>John</owner> 
+<created>12232012</created> 
+<status>active</status>
+</Server>
+</Servers>'
+
+### JSON
+{
+'Servers: [
+{ 
+name: Server1,
+owner: John,
+created: 12232012,
+status: active,
+ }
+]
+}'
+
+### YAML
+
+'Servers:
+   - name: Server1 
+     owner: John
+     created: 12232012 
+     status: active'
+
+- key value pair
+- key : value
+- fruit: Apple
+
+### Array:
+
+Fruits:
+- orange
+- apple
+- bannana
+
+### Dictionary:
+Banana:
+  calories
+  fat:
+  carbs:
+
+grapes:
+  calories: 105
+  fat: 0.4
+  carbs:
+
+- Be mindful of spaces/indentation
+- Fruits:
+    - banana:
+        calories:
+        ddd
+        xxx
+     - apple: 
+        calories:
+        ddd
+        xxx
+
+- we can represent data of car in dictionary
+  - with properties like : color, model-name,modelyear, transmission, 
+
+for List: 
+	we can use 
+
+- Dictionary: are unordered,
+- arrays/list: ordered   here orders matter.
+
+- line beginning with # is comment
+
+
+
+
 
 
 
