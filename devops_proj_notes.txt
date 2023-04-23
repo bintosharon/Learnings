@@ -240,22 +240,24 @@ kubernetes api documentation
 
 pod manifest file in kubernetes
 
+cat pod.yml
 apiVersion: v1
 kind: Pod
-metadate:
+metadata:
   name: demo-pod
   labels:
     app: demo-app
 spec:
-  containers: 
-    -name: demo-nginx
-     image: nginx
-     ports:
-       -name: demo-nginx
-        containerPort: 80
+  containers:
+    - name: demo-nginx
+      image: nginx
+      ports:
+        - name: demo-nginx
+          containerPort: 80
 
 service manifest file kubernetes
 
+ cat service.yml
 apiVersion: v1
 kind: Service
 metadata:
@@ -264,8 +266,16 @@ spec:
   ports:
   - name: nginx-port
     port: 80                 #exposing on port 80
-    targetPort: 80           #container 80
+    targetPort: 80
+  selector:
+    app: demo-app    #container 80
   type: LoadBalancer
 
 kubectl apply -f pod.yml
 
+
+kubectl apply -f service.yml
+
+kubectl describe demoservice
+
+`kubectl get pod -o wide`
