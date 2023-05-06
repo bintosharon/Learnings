@@ -71,4 +71,6 @@ docker network disconnect
 * docker network create my_app_net # creates defualt bridge nw
 * docker network create --help
 * `docker run -d --name nginbox --network my_app_net nginx`
-        `docker network inspect my_app # will show that the container busyboxy is connected` 
+        `docker network inspect my_app # will show that the container nginbox is connected` 
+        
+* default bridge network doeesnt have DNS server so we have to use --link when creating container
