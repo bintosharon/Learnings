@@ -2,9 +2,9 @@
     #Use 
     #bash dockerubuntu.sh
     
-    # Docker Mastery: with Kubernetes +Swarm from a Docker Captain Notes
+    #Docker Mastery: with Kubernetes +Swarm from a Docker Captain Notes
     
-    ## Sample Dockerfile for python with flask framework
+    ##Sample Dockerfile for python with flask framework
     
     ` 
     FROM python
