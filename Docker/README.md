@@ -45,11 +45,30 @@ docker container exec -it <container name> <command you want to execute  inside 
 * use apk if really needed
 
 ## Docker networks
-
+* default docker virtual network is bridge which is nat'ed behind the host ip
+* default subnet: 172.17.0.0 which can be changed
+* host network: special network that skips virtual networking of docker and attachs dirrectly to host interface
+* none - not attached to anything
+* we can create our own networks
 ### Contianer port check
 
 `docker contianer port <container>`
 
 ### To get more info like Ip address of and container
 `docker inspect <container>`
-`docker container inspect --format "{{ .NetworkSwttings.IPAdress}}" `
+`docker container inspect --format "{{ .NetworkSettings.IPAddress}}" <contianer name> `
+
+### some commands
+`
+docker network ls #show networks
+docker network inspect #inspect a network
+    docker network inspect bridge # will also list out the container connected to the network
+docker network create --driver # create new network
+docker network connect #attach a network to container | networkname containername 
+docker network disconnect
+`
+
+* docker network create my_app_net # creates defualt bridge nw
+* docker network create --help
+* `docker run -d --name nginbox --network my_app_net nginx`
+        `docker network inspect my_app # will show that the container busyboxy is connected` 
