@@ -28,14 +28,28 @@ httpd - apache daemon
 `
 docker container start -ai <name of stopped container>
 `
-### Get into a container
-
+### Start new container interactively
+`
+docker container run -it <container name> <command you want to execute  inside eg:bash>
+`
+### Run additional command in existing container
 `
 docker container exec -it <container name> <command you want to execute  inside eg:bash>
-`
-   
+`  
 ### Alpine
 
-Light weight linux distribution - very small - 3.98MB
+* Light weight linux distribution - very small - 3.98MB
 
-bash isnt present in the container - alpine
+* bash isnt present in the container - alpine, but sh is present which isnt as full fledged as bash
+
+* use apk if really needed
+
+## Docker networks
+
+### Contianer port check
+
+`docker contianer port <container>`
+
+### To get more info like Ip address of and container
+`docker inspect <container>`
+`docker container inspect --format "{{ .NetworkSwttings.IPAdress}}" `
