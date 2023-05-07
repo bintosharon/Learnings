@@ -74,3 +74,31 @@ docker network disconnect
         `docker network inspect my_app # will show that the container nginbox is connected` 
         
 * default bridge network doeesnt have DNS server so we have to use --link when creating container
+
+### Images
+* `docker history nginx:latest`
+* `docker image inspect`
+### Other Commands
+`
+docker image tag --help
+docker image tag <image going to be tagged> <your tag goes here> # docker image tag nginx sharonbinto/nginx
+docker image push
+docker login
+docker logout
+
+`
+
+### Dockerfile
+
+`
+docker build -f some-dockerfile
+`
+
+### Sample nginx dockerfile
+
+`
+FROM nginx:latest
+WORKDIR /usr/share/nginx/html
+COPY index.html index.html
+`
+
