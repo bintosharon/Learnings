@@ -104,3 +104,22 @@ COPY index.html index.html
 ### Docker cleaning
 
 `docker system clean`
+
+## Volume
+
+### commands
+
+`
+docker volume inspect
+docker volume ls
+docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql # naming the volume.
+
+docker volume create --help `
+### bind mounting - 
+* starts with forward slash
+* cannot be written in dockerfile
+` run -v /Users/binto/stuff:/path/container   - mac/linux
+run -v //c/Users/binto/stuff:/path/container - windows
+
+docker run -d --nginx -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
+`
