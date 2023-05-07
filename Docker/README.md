@@ -123,3 +123,4 @@ run -v //c/Users/binto/stuff:/path/container - windows
 
 docker run -d --nginx -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
 `
+docker container logs -f <container name>
