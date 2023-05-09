@@ -124,3 +124,25 @@ run -v //c/Users/binto/stuff:/path/container - windows
 docker run -d --nginx -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
 `
 docker container logs -f <container name>
+
+    
+ ## docker compose
+    
+ `   docker-compose.yml
+    can be used with docker-compose -f `
+    
+    `
+    version:
+    services:
+      servicename:
+        image:
+        command:
+        environment:
+      servicename2"
+    volumes:
+    network
+    `
+    
+## important link
+- ***[Docker file Syntax](https://docs.docker.com/engine/reference/builder/)***
+- ***[Compose file Syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/)***
