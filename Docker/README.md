@@ -146,3 +146,14 @@ docker container logs -f <container name>
 ## important link
 - ***[Docker file Syntax](https://docs.docker.com/engine/reference/builder/)***
 - ***[Compose file Syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/)***
+ 
+### Docker compose commands
+`
+ docker-compose help
+ docker-compose up
+ docker-compose down
+ docker-compose logs
+    
+    
+    
+    `
