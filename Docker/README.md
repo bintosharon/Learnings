@@ -153,7 +153,19 @@ docker container logs -f <container name>
  docker-compose up
  docker-compose down
  docker-compose logs
-    
+ docker-compose down -v
+ docker-compose down -rmi
     
     
     `
+### Docker Swarm commands
+`
+    docker swarm init
+    docker node ls
+    docker node --help
+    docker swarm --help
+    docker service --help #docker run
+    docker service create alpine ping 8.8.8.8
+`
+    
+  
